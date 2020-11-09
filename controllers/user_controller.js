@@ -1,3 +1,3 @@
 module.exports.user = function(req,res){
-    res.end('<h1>User Controller</h1>');
+    res.send('<h1>User profile Controller</h1>');
 } 
