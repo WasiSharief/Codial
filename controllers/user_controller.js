@@ -1,3 +1,5 @@
 module.exports.user = function(req,res){
-    res.send('<h1>User profile Controller</h1>');
+    res.render('user',{
+        h1:"This is User rendered EJS file"
+    });
 } 
