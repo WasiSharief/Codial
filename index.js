@@ -13,7 +13,9 @@ app.use(express.static('assets'));
 app.listen(port,function(err){
     
     if(err){
+
         console.log(`Error while running server:${err}`);
+        
     }
     console.log(`Server running on port: ${port}`);
 
