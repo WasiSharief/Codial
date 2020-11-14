@@ -10,4 +10,4 @@ db.once('open',function(){
     console.log("connected to database successfully");
 })
 
-exports.module = db;
+module.exports = db;
