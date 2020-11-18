@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    
+    
+    
+    #layout-main{
+        margin-top: -2%;
+        height: 1000px;
+        width: 100%;
+        background-color: rgb(126, 141, 145);
+        text-align: left;
+        h1{
+            
+            font-size: 45px;
+           color: rgb(15, 57, 112);
+            padding: 20px;
+            
+        }
+        button{
+            width: 150px;
+            height: 40px;
+            background-color:  rgb(6, 79, 82);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            border:0px solid;
+        
+        }
+
+    }
+}

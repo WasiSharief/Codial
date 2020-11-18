@@ -26,5 +26,6 @@ router.post('/signin',passport.authenticate(
 //user signup actions and page renders
 router.get('/signup/page',signup.signup_page);
 router.post('/signup/page/signup',signup.signup);
+router.get('/signout',userController.endSession_signout);
 
 module.exports = router;

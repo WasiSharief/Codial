@@ -20,6 +20,6 @@ module.exports.signin_page_control = function(req,res)
 module.exports.signin_createsession_control = function(req,res)
 {
    
-    return res.redirect('user/profile');
+    return res.redirect('/home');
 
 } 

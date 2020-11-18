@@ -7,8 +7,27 @@
 
         <h1 id="id">
             <%= h1 %><br>
-            Home Page/
+        
         </h1>
+       <div id="post-container">
+        <% for ( i of posts){%>
+        <h3>
+           Content: <%= i.content %><br>
+           User:   <%= i.user.name %><br>
+        </h3>
+
+        <%}%>
+    </div>
+  
+        <section id="feed-posts">
+            <form action="/new/post" method="POST" id="post-form">
+
+                <textarea name="content" cols="30" rows="3" placeholder="Type Here..."></textarea>
+                <input type="submit" name="post" value="Post">
+
+            </form>
+
+        </section>
         
         <br>
         <script type="text/javascript" src="/JS/home.js"></script>

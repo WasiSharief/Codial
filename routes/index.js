@@ -11,7 +11,7 @@ const homeController = require('../controllers/home_controller');
 app.use(express.urlencoded());
 
 
-
+router.use('/new',require('./post'));
 router.get('/home',homeController.home);
 router.use('/user',require('./user'));
 router.use('/',require('./user'));

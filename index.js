@@ -13,8 +13,17 @@ const passport = require('passport');
 const LocalStrategy = require('./config/passport-local-strategy');
 
 const MongoStore = require('connect-mongo')(session);
-const user = require('./models/userschema');
 
+// const user = require('./models/userschema');
+const sassmiddelware = require('node-sass-middleware');
+
+app.use(sassmiddelware({
+    src:'./assets/SCSS',
+    dest:'./assets/CSS',
+    debug:true,
+    outputStyle:'extended',
+    prefix:'/CSS'
+}));
 
 app.use(express.urlencoded());
 
