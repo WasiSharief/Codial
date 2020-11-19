@@ -1,0 +1,9 @@
+#comment-section {
+  width: fit-content;
+  height: fit-content;
+  background-color: #c5aaaa;
+  border: 1px solid black;
+  margin-left: 3%;
+  text-align: left; }
+  #comment-section p {
+    display: inline-block; }
