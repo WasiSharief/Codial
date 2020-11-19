@@ -6,44 +6,7 @@
         
         </h1>
         <br>
-        <section id="feed-posts">
-            <% if(locals.user){%>
-            <form action="/new/post" method="POST" id="post-form">
-
-                <textarea name="content" cols="30" rows="3" placeholder="Type Here..."></textarea>
-                <input type="submit" name="post" value="Post">
-
-            </form>
-            <%}%>
-        </section>
-
-            <div id="post-container">
-             <% for ( i of posts){%>
-             <h3>
-             Content: <%= i.content %><br>
-             User:   <%= i.user.name %><br>
-           
-            </h3>
-            <div id="comment-section">
-                Comments-section<br>
-            <%for( comment of i.comments){%>
-            <p>-<%= comment.comments%></p><br>
-                    <small> <%=comment.user.name%></small>
-            <%}%>
-        </div><br>
-           <div id="comment">
-              <% if(locals.user){%>
-            <form action="new/comment" method="POST">
-                <input type="text" name="comment" placeholder="comment">
-                <input type="hidden" name="post" value="<%= i.id %>">
-                <input type="submit" value="Add comment">
-            </form>
-        <%}%>
-           </div>
-       
-
-        <%}%>
-    </div>
+       <%- include('_posts') -%>
     
  
         

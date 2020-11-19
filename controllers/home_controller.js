@@ -24,7 +24,7 @@ module.exports.home=function(req,res){
         
             return  res.render('home',{
                 h1:"home Page",
-                posts:posts,
+                posts:posts
                 
                 });      
             });

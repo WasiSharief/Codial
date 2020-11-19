@@ -19,4 +19,21 @@ module.exports.post = function(req,res){
 
 }
 
+module.exports.deletepost = function(req,res)
+{
+    console.log("data inside params",req.params.id);
+    Post.findById(req.params.id,function(err,post)
+    {
+        if(post.user == req.user.id)
+        {
+            post.remove();
+            comments.deleteMany({post:req.params.id},function(err){
+                return res.redirect('back');
+            })
+        }
+        else{
+            return res.redirect('back');
+        }
+    });
+}
 
