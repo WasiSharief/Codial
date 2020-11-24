@@ -10,7 +10,10 @@ const userController = require('../controllers/user_profile_controller');
 
 
 
-router.get('/profile',passport.checkAuthentication,userController.user);
+router.get('/profile/:id',passport.checkAuthentication,userController.user);
+// userprofile page
+router.post('/update/:id',passport.checkAuthentication,userController.profile_update);
+// updating profile router
 //user signin actions and page renders
 router.get('/signin/page',signin_controller.signin_page_control);
 

@@ -5,20 +5,21 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/userschema');
 
 passport.use(new LocalStrategy({
-    usernameField:'email'
+    usernameField:'email',
+    passReqToCallback:true
     
-    },function(email,password, done){
+    },function(req,email,password, done){
         // finding email and corresponding user details as object
         User.findOne({email:email},function(err,user){
             if(err)
             {
-                console.log("error in passport js while authenticating");
+                req.flash('error',"error in passport js while authenticating");
                 return done(err);
             }
             //if user is not found or password is not matched function will be returned
             if(!user || user.password != password )
             {
-                console.log("Invalid username or password");
+                req.flash('error','Invalid username or password');
                 return done(null,false);
             }
             
@@ -45,7 +46,7 @@ passport.deserializeUser(function(id, done)
         if(err)
         {
              
-            console.log("error in passport js while authenticating");
+            req.flash('error','Error in matching users cookie id');
             return done(err)
            
         }

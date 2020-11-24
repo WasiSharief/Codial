@@ -7,6 +7,9 @@ header {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 20px;
   padding-bottom: 10px; }
+  header a {
+    text-decoration: none;
+    color: white; }
   header ul {
     display: flex;
     color: white;

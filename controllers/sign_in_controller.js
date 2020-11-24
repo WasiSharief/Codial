@@ -19,7 +19,8 @@ module.exports.signin_page_control = function(req,res)
 
 module.exports.signin_createsession_control = function(req,res)
 {
-   
+    req.flash('success','Successfully logged In');
+
     return res.redirect('/home');
 
 } 

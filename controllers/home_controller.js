@@ -4,29 +4,59 @@
 
 const post = require('../models/posts');
 const comments = require('../models/commentsschema');
-module.exports.home=function(req,res){
-    
-   
-        post.find({})
+const user = require('../models/userschema');
+module.exports.home= async function(req,res){
+
+       
+    try{
+         let posts = await post.find({})
         .populate('user')
+        .sort('-createdAt')
         .populate({
             path:'comments',
             populate: {
                 path:'user'
             }
-        }).exec(function (err,posts)
-        {
-        
-        if(err)
-        {
-            console.log("error in post");
-        }
-        
-            return  res.render('home',{
-                h1:"home Page",
-                posts:posts
-                
-                });      
-            });
+        });
+
+        let users = await user.find({});
     
+        return  res.render('home',{
+            h1:"home Page",
+            posts:posts,
+            users:users             
+                        }); 
+        
+
+        }catch(err){
+            console.log("error in post");
+        }                        
+
 }
+
+// user.find({},function(err,users){
+
+//     post.find({})
+// .populate('user')
+// .populate({
+//     path:'comments',
+//     populate: {
+//         path:'user'
+//     }
+// }).exec(function (err,posts)
+// {
+
+// if(err)
+// {
+//     console.log("error in post");
+// }
+
+//     return  res.render('home',{
+//         h1:"home Page",
+//         posts:posts,
+//         users:users             
+
+//         });      
+//     });
+
+// });

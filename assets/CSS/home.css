@@ -7,3 +7,8 @@
   text-align: left; }
   #comment-section p {
     display: inline-block; }
+
+#user-friends {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid black; }

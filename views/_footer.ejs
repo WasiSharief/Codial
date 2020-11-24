@@ -2,7 +2,11 @@
 <footer>
     &ensp;&#169; WasiSharief. All Rights Reserved 
     <ul>
-        <li><a href="/user/profile">Profile</a></li>
-        <li><a href="/home">Home</a></li>
+        
+        <%if(locals.user){%>
+            <li><a href="user/profile/<%= user.id%>">Profile</a></li>
+            <%}%>
+            <li><a href="/home">Home</a></li>
+      
     </ul>
 </footer>

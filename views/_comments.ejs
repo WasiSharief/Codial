@@ -1,24 +1,16 @@
-<div id="comment-section">
-    Comments-section<br>
-    
-   <%for( comment of i.comments){%>
+<li id="comment-<%= comment._id %>">
+   <p>
+       <% if (locals.user && locals.user.id == comment.user.id){ %>
+       
+       <small>
+           <a class="delete-comment-button" href="new/delete/comment/<%= comment.id %>">X</a>
+       </small>
+       <% } %>
+       <%= comment.comments %>
+       <br>
+       <small>
+           <%= comment.user.name %>
+       </small>
+   </p>    
 
-       <%if(locals.user && locals.user.id == comment.user.id){%>
-           
-   <a href="new/delete/comment/<%= comment.id%>" >X</a>
-           
-       <%}%>
-
-   <p> <small> <%=comment.user.name%></small>: <%= comment.comments%></p><br>
-
-   <%}%>
-</div><br>
-
-<div id="comment">
-<% if(locals.user){%>
-<form action="new/comment" method="POST">
-<input type="text" name="comment" placeholder="comment">
-<input type="hidden" name="post" value="<%= i.id %>">
-<input type="submit" value="Add comment">
-</form>
-<%}%>
+</li>

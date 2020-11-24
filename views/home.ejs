@@ -1,17 +1,40 @@
 
         <link rel="stylesheet" type="text/css" href="/CSS/home.css">
 
-        <h1 id="id">
-            <%= h1 %><br>
         
-        </h1>
-        <br>
-       <%- include('_posts') -%>
-    
+<div id="home-container">
+    <section id="feed-posts">
+            <h4>Posts</h4>
+            <% if(locals.user){ %>
+            <form action="/new/post" id="new-post-form" method="POST">
+                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+                <input type="submit" value="Post">
+            </form>
+            <% } %>
+        
+            <div id="posts-list-container">
+                <ul>
+                    <% for(post of posts){ %>
+                        
+                    <%- include('_posts') -%>
+                        
+                    <%} %>
+                </ul>
+            </div>
+        </section>
+        
+       <section id="user-friends">
+           <h2>Friends</h2>
+
+           <% for(u of users){%>
+            <a href="user/profile/<%= u.id%>"><%= u.name%></a><br><br>
+            <%}%>
+       </section>
  
         
         <br>
-        <script type="text/javascript" src="/JS/home.js"></script>
+        <script src="/JS/comment_ajax.js"></script>
+        <script src="/JS/post_ajax.js"></script>
 
         
         
