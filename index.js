@@ -33,7 +33,8 @@ app.use(cookieParser());
 
 app.use(express.static('./assets'));
 
-
+// making uploads path avaialble to profile image submit
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 app.use(expresslayouts);
 

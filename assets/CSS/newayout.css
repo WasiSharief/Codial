@@ -1,21 +1,23 @@
 body {
   margin: 0; }
-  body #layout-main {
+  body #home-container {
     margin-top: 0%;
     height: fit-content;
     width: 100%;
-    background-color: #7e8d91;
+    background-color: #f4f6fc;
     text-align: left;
     min-height: 600px;
     display: flex; }
-    body #layout-main #feed-posts {
+    body #home-container #feed-posts {
       width: 70%; }
-    body #layout-main h1 {
+    body #home-container #user-friends {
+      width: 30%; }
+    body #home-container h1 {
       font-size: 45px;
       color: #0f3970;
       padding: 20px;
       margin-top: 0%; }
-    body #layout-main button {
+    body #home-container button {
       width: 150px;
       height: 40px;
       background-color: #064f52;

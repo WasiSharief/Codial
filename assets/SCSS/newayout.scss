@@ -3,17 +3,20 @@ body{
     
     
     
-    #layout-main{
+    #home-container{
         margin-top: 0%;
         height: fit-content;
         width: 100%;
-        background-color: rgb(126, 141, 145);
+        background-color: rgb(244, 246, 252);
         text-align: left;
         min-height: 600px;
         display: flex;
-
+        
         #feed-posts{
             width: 70%;
+        }
+        #user-friends{
+            width: 30%;
         }
         h1{
             

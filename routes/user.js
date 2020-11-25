@@ -12,6 +12,7 @@ const userController = require('../controllers/user_profile_controller');
 
 router.get('/profile/:id',passport.checkAuthentication,userController.user);
 // userprofile page
+router.get('/profile/user/profile/image',userController.image_preview);
 router.post('/update/:id',passport.checkAuthentication,userController.profile_update);
 // updating profile router
 //user signin actions and page renders
@@ -27,6 +28,7 @@ router.post('/signin',passport.authenticate(
 
 
 //user signup actions and page renders
+
 router.get('/signup/page',signup.signup_page);
 router.post('/signup/page/signup',signup.signup);
 router.get('/signout',userController.endSession_signout);

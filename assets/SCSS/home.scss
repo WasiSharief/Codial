@@ -1,4 +1,4 @@
-#comment-section{
+.post-comments-list{
     width: fit-content;
     height: fit-content;
     background-color: rgb(197, 170, 170);
@@ -11,7 +11,7 @@
     }
 }
 #user-friends{
-    width: 30%;
+    width: 30%!important;
     padding: 10px;
     border: 1px solid black;
 

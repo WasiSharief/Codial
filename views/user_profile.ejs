@@ -1,16 +1,22 @@
 
         <link rel="stylesheet" type="text/css" href="/CSS/home.css">
-        
+        <img src="<%= user.avatar %>" id="profile-image" alt="<%= user.name %>" width="100">
        
 
         <%if(profile_user.id == user.id){%>
-       <form action="/user/update/<%= profile_user.id %>" method="POST">
+       <form action="/user/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
          <input type="text" name="name" id="username" value="<%= profile_user.name %>" >
          <input type="text" name="email" id="useremail" value="<%= profile_user.email %>" >
+         <input type="file" name="avatar" id="profimg" placeholder="profile">
          <input type="submit" id="editprofile_btn">
       </form>
+      <p id="preview" >Image Preview<br>
+         FileSize :<%= user.fileinfo %>
+
+      </p>
          <%} else{%>        
             <h1><%= h1%> <br>  
                UserName: <%= profile_user.name%> <br>   
             </h1>
          <%}%>
+         <script src="/JS/profile_ajax.js"></script>

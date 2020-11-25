@@ -1,9 +1,9 @@
 class PostComments{
     // constructor is used to initialize the instance of the class whenever a new instance is created
-    constructor(postId){
+    constructor(postId){ 
         this.postId = postId;
-        this.postContainer = $(`#post-${postId}`);
-        this.newCommentForm = $(`#post-${postId}-comments-form`);
+        this.postContainer = $(`#post-${postId}`);//in post.ejs top
+        this.newCommentForm = $(`#post-${postId}-comments-form`);//form of comments in posts.ejs
 
         this.createComment(postId);
 
@@ -76,7 +76,7 @@ class PostComments{
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),
-                success: function(data){
+                success: function(data){ 
                     $(`#comment-${data.data.comment_id}`).remove();
 
                     new Noty({
