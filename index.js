@@ -10,7 +10,11 @@ const expresslayouts = require('express-ejs-layouts');
 
 const session = require('express-session');
 const passport = require('passport');
+
 const LocalStrategy = require('./config/passport-local-strategy');
+const jwtStrategy = require('./config/passport-jwt-strategy');
+
+
 
 const MongoStore = require('connect-mongo')(session);
 
@@ -63,7 +67,7 @@ app.use(session({
     {
         if(err)
         {
-            console(err || "connected mongodb store");
+            console.log(err || "connected mongodb store");
         }
     })
 }));

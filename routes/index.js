@@ -15,6 +15,7 @@ router.use('/new',require('./post'));
 router.get('/home',homeController.home);
 router.use('/user',require('./user'));
 router.use('/',require('./user'));
+router.use('/api',require('./api'));
 
 // router.use('/user/post',require('./post'));
 // to add other router 
