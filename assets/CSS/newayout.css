@@ -1,5 +1,7 @@
 body {
   margin: 0; }
+  body #layout-main {
+    min-height: 600px; }
   body #home-container {
     margin-top: 0%;
     height: fit-content;
@@ -10,6 +12,13 @@ body {
     display: flex; }
     body #home-container #feed-posts {
       width: 70%; }
+      body #home-container #feed-posts .post-class {
+        width: 300px;
+        height: fit-content;
+        background-color: yellowgreen; }
+      body #home-container #feed-posts .likes-comments-section {
+        display: flex;
+        margin-left: 10px; }
     body #home-container #user-friends {
       width: 30%; }
     body #home-container h1 {

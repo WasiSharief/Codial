@@ -13,7 +13,7 @@ const passport = require('passport');
 
 const LocalStrategy = require('./config/passport-local-strategy');
 const jwtStrategy = require('./config/passport-jwt-strategy');
-
+const GoogleStrategy = require('./config/passport-google-oauth-strategy');
 
 
 const MongoStore = require('connect-mongo')(session);

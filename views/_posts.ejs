@@ -1,5 +1,5 @@
 
-<li id="post-<%= post._id %>">
+<li class="post-class" id="post-<%= post._id %>">
     <p>
         <% if (locals.user && locals.user.id == post.user.id){ %>
         <small>
@@ -12,6 +12,10 @@
            Name: <%= post.user.name %>
         </small>
     </p>
+        <div class="likes-comments-section">
+            <div class="likes">
+                <a id="liker"><i class="">Hell</i></a>
+            </div>
     <div class="post-comments">
         <% if (locals.user){ %>
             <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
@@ -34,5 +38,5 @@
             </ul>
         </div>
     </div>
-    
+        </div>
 </li>

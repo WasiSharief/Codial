@@ -16,6 +16,7 @@ router.get('/home',homeController.home);
 router.use('/user',require('./user'));
 router.use('/',require('./user'));
 router.use('/api',require('./api'));
+router.use('/password',require('./reset_ps_router'));
 
 // router.use('/user/post',require('./post'));
 // to add other router 

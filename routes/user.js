@@ -33,4 +33,9 @@ router.get('/signup/page',signup.signup_page);
 router.post('/signup/page/signup',signup.signup);
 router.get('/signout',userController.endSession_signout);
 
+router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}));
+router.get('/user/auth/google/callback', passport.authenticate('google',{failureRedirect:'/signin/page'}),signin_controller.signin_createsession_control);
+
+
+
 module.exports = router;
