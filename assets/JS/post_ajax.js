@@ -37,7 +37,7 @@
 
     // method to create a post in DOM
     let newPostDom = function(post){
-        return $(`<li id="post-${post._id}">
+        return $(`<li class="post-class" id="post-${post._id}">
                     <p>
                         
                         <small>
@@ -50,8 +50,18 @@
                         ${ post.user.name }
                         </small>
                     </p>
+                    <div class="likes-comments-section">
+
+            <div class="likes">
+                <a class="likeanchor" href="" ><big><i id="liker" class="fas fa-thumbs-up"></i></big> Like</a>
+            </div>
+
                     <div class="post-comments">
                         
+                    <div> <a href="" class="commentclickdiv" id="comment_visible">Comments</a>
+               
+                <div class="comments" id="comments">
+
                             <form id="post-${ post._id }-comments-form" action="new/comment" method="POST">
                                 <input type="text" name="comment" placeholder="Type Here to add comment..." required>
                                 <input type="hidden" name="post" value="${ post._id }" >
@@ -65,7 +75,8 @@
                             </ul>
                         </div>
                     </div>
-                    
+                    </div>
+                    </div>
                 </li>`)
     }
 

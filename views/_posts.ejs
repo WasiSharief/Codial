@@ -13,10 +13,17 @@
         </small>
     </p>
         <div class="likes-comments-section">
-            <div class="likes">
-                <a id="liker"><i class="">Hell</i></a>
-            </div>
-    <div class="post-comments">
+
+                     <div class="likes">
+                    <a class="likeanchor" href="" ><i class="fas fa-thumbs-up liker"></i> Like</a>
+                     </div>
+            
+            <div class="post-comments">
+
+               <div> <a href="" class="commentclickdiv" id="comment_visible">Comments</a>
+                
+                <div class="comments" id="comments">
+
         <% if (locals.user){ %>
             <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
             <form id="post-<%= post._id %>-comments-form" action="/new/comment" method="POST">
@@ -37,6 +44,14 @@
                 <%} %>
             </ul>
         </div>
-    </div>
+                       
+                </div>
+                            </div>
+
         </div>
+        
+        </div>
+        
 </li>
+<script src="https://kit.fontawesome.com/0353bbb956.js" crossorigin="anonymous"></script>
+<script src="/JS/home.js"></script>

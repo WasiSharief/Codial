@@ -1,3 +1,62 @@
+
+$('.liker').on('click',function(e){
+    e.preventDefault();
+    let like = $(this);
+    like.toggleClass('liker-toggle');
+});
+
+
+// selecting child class of commentclickdiv div which is comments and adding toggle class
+$('.commentclickdiv').click(function(e){
+e.preventDefault();
+let commentvisible = $(this).parent().children('.comments');
+commentvisible.toggleClass('commentshide');
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // {
      
 //        // to create post ajax request
