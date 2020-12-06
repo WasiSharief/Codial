@@ -4,7 +4,7 @@ const Post = require('../models/posts');
 const mailers = require('../mailers/comments_mailer');
 const queue = require('../config/kue');
 const emailWorker = require('../workers/comments_email_worker');
-
+const likes = require('../models/likes');
 module.exports.comment = async function(req,res)
 {
     
@@ -24,6 +24,7 @@ module.exports.comment = async function(req,res)
             
             comment = await comment.populate('user', 'name email').execPopulate();
 
+            
             queue.create('emails',comment).save(function(err){
                 if(err){console.log("error in creating comment",err); return;}
              
@@ -59,13 +60,17 @@ module.exports.deletecomment = async function(req,res)
         let comment = await comments.findById(req.params.id)
         
         // let post = await Post.findById(comment.post);
-
+        await likes.deleteMany({likeable:req.params.id});
+        
         if(comment.user == req.user.id || req.user.id == post.user)
         {
             let postID = comment.post;
             comment.remove();
 
-            let post = await Post.findByIdAndUpdate(postID,{ $pull:{comments:req.params.id}})
+            
+            let post = await Post.findByIdAndUpdate(postID,{ $pull:{comments:req.params.id}});
+            
+            
             
            if (req.xhr){
             return res.status(200).json({

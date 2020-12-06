@@ -11,23 +11,26 @@ module.exports.home= async function(req,res){
     try{
          let posts = await post.find({})
         .populate('user')
+        .populate('likes')
         .sort('-createdAt')
         .populate({
             path:'comments',
             populate: {
-                path:'user'
+                path:'user likes'
             }
         });
 
+        console.log("Post likes",posts.likes);
+
         let users = await user.find({});
-    
+        
         return  res.render('home',{
             h1:"home Page",
             posts:posts,
             users:users             
                         }); 
         
-
+                    
         }catch(err){
             console.log("error in post");
         }                        

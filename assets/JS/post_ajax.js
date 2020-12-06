@@ -18,6 +18,10 @@
                     // call the create comment class
                     new PostComments(data.data.post._id);
 
+                    new Togglelike ($('.liker',newPost));
+
+                    new ToggleComment ($('.commentclickdiv',newPost));
+
                     new Noty({
                         theme: 'relax',
                         text: "Post published!",
@@ -52,13 +56,13 @@
                     </p>
                     <div class="likes-comments-section">
 
-            <div class="likes">
-                <a class="likeanchor" href="" ><big><i id="liker" class="fas fa-thumbs-up"></i></big> Like</a>
-            </div>
+                    <div class="likes">
+                    <a class="likeanchor" href="/likes/toggle/?id=${post._id}&type=Post"  ><i class="fas fa-thumbs-up liker" ></i><p class="likecount">${post.likes.length}</p> Likes</a>
+                     </div>
 
                     <div class="post-comments">
                         
-                    <div> <a href="" class="commentclickdiv" id="comment_visible">Comments</a>
+                    <div class="commentclickdiv"><a href="" id="comment_visible">Comments</a></div>
                
                 <div class="comments" id="comments">
 
@@ -72,6 +76,7 @@
                         <div class="post-comments-list">
                             <ul id="post-comments-${ post._id }">
                                 
+                            
                             </ul>
                         </div>
                     </div>

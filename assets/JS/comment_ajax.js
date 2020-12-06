@@ -30,6 +30,8 @@ class PostComments{
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
 
+                    new Togglelike ($('.liker',newComment));
+
                     new Noty({
                         theme: 'relax',
                         text: "Comment published!",
@@ -63,6 +65,9 @@ class PostComments{
                             <small>
                                 ${comment.user.name}
                             </small>
+                            <div class="likes">
+                    <a class="likeanchor" href="/likes/toggle/?id=${comment._id}&type=comments"  ><i class="fas fa-thumbs-up liker" ></i><p class="likecount"></p> Likes</a>
+                     </div>
                         </p>    
 
                 </li>`);

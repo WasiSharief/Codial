@@ -1,31 +1,29 @@
+// {
 
-$('.liker').on('click',function(e){
-    e.preventDefault();
-    let like = $(this);
-    like.toggleClass('liker-toggle');
-});
+//     let count =0;
 
-
-// selecting child class of commentclickdiv div which is comments and adding toggle class
-$('.commentclickdiv').click(function(e){
-e.preventDefault();
-let commentvisible = $(this).parent().children('.comments');
-commentvisible.toggleClass('commentshide');
-})
-
-
-
-
-
-
+// $('.liker').on('click',function(e){
+//     e.preventDefault();
+//     let like = $(this);
+//     like.toggleClass('liker-toggle');
+    
+    
+//     if(count==0){
+//         $('#likecount').text(++count);
+//     }else if(count==1){
+//         $('#likecount').text("");
+//         --count
+//     } 
+    
+// });
 
 
-
-
-
-
-
-
+// // selecting child class of commentclickdiv div which is comments and adding toggle class
+// // $('.commentclickdiv').click(function(e){
+// // e.preventDefault();
+// // let commentvisible = $(this).parent().children('.comments');
+// // commentvisible.toggleClass('commentshide');
+// });
 
 
 
@@ -56,6 +54,20 @@ commentvisible.toggleClass('commentshide');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 // {
      

@@ -23,7 +23,11 @@ const userSchema = new mongoose.Schema({
     },
     fileinfo:{
          type:String
-    }
+    },
+    Friendship:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Friendship'
+    }]
 
 },{timestamps:true});
 

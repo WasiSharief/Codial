@@ -80,10 +80,6 @@ module.exports.createNewPassword = async function(req,res){
         return res.redirect('back');
     }
     UserDetails  = await resetpassword.findOne({accesstoken:req.params.id})
-    UserDetails.valid=false;
-    UserDetails.save();
-    
-
     if(UserDetails.valid == true)
     {
        
@@ -97,4 +93,7 @@ module.exports.createNewPassword = async function(req,res){
         return;
     } 
 
+    UserDetails.valid=false;
+    UserDetails.save();
+    
 }

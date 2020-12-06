@@ -13,11 +13,26 @@
         </small>
     </p>
         <div class="likes-comments-section">
-
-                     <div class="likes">
-                    <a class="likeanchor" href="" ><i class="fas fa-thumbs-up liker"></i> Like</a>
-                     </div>
+           
             
+            <%var color="black"%>
+            <%for(likes of post.likes){%>
+                <%if(likes.user == user.id){%>
+
+                    <% color="blue"%>
+                         
+                <%}}%>
+                   
+                
+                <%if(locals.user){%>
+                <div class="likes">
+                    <a class="likeanchor" href="/likes/toggle/?id=<%=post.id%>&type=Post" ><i class="fas fa-thumbs-up liker <%=color%>"></i><p class="likecount"><%=post.likes.length%></p> Likes</a>
+                     </div>
+               
+
+                        <%}%>
+                       
+                            
             <div class="post-comments">
 
                <div> <a href="" class="commentclickdiv" id="comment_visible">Comments</a>
@@ -39,7 +54,17 @@
                 <% for (comment of post.comments){%>
 
                     <%- include('_comments') -%>
-                    
+                    <%var color="black"%>
+            <%for(likes of comment.likes){%>
+                <%if(likes.user == user.id){%>
+
+                    <% color="blue"%>
+                         
+                <%}}%>  
+
+                    <div class="likes">
+                        <a class="likeanchor" href="/likes/toggle/?id=<%=comment._id%>&type=comments"  ><i class="fas fa-thumbs-up liker <%=color%>" ></i><p class="likecount"><%=comment.likes.length%></p> Likes</a>
+                         </div>
                 
                 <%} %>
             </ul>
@@ -51,7 +76,5 @@
         </div>
         
         </div>
-        
+
 </li>
-<script src="https://kit.fontawesome.com/0353bbb956.js" crossorigin="anonymous"></script>
-<script src="/JS/home.js"></script>

@@ -39,6 +39,8 @@ body {
           text-decoration: none;
           color: black;
           font-size: 20px; }
+          body #home-container #feed-posts .likes-comments-section .likeanchor .blue {
+            color: #356de7; }
         body #home-container #feed-posts .likes-comments-section .liker-toggle {
           color: #356de7;
           animation: likeswing 0.3s ease-in-out 1; }

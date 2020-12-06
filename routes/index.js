@@ -17,7 +17,7 @@ router.use('/user',require('./user'));
 router.use('/',require('./user'));
 router.use('/api',require('./api'));
 router.use('/password',require('./reset_ps_router'));
-
+router.use('/likes',require('./likes_routes'));
 // router.use('/user/post',require('./post'));
 // to add other router 
 // router.use('/router',require('./routerfile'));

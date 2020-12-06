@@ -34,8 +34,36 @@
         
         <br>
         <script src="/JS/comment_ajax.js"></script>
-        <script src="/JS/post_ajax.js"></script>
+        
+        <script src="https://kit.fontawesome.com/0353bbb956.js" crossorigin="anonymous"></script>
 
+
+        <script src="/JS/post_ajax.js"></script>
+        <script src="/JS/comment_ajax.js"></script>
+        <script src="/JS/tooglelike.js"></script>
+        <script src="/JS/toggle_comment.js"></script>
+
+        <script>
+
+        $('.liker').each(function(){
+            let self = this;
+            let togglelike = new Togglelike(self);
+        });
+
+        $('.commentclickdiv').each(function(){
+            let self = this;
+            let togglecomment = new ToggleComment(self);
+        });
+            
+        
+
+        // $('.commentclickdiv').click(function(e){
+        // e.preventDefault();
+        // let commentvisible = $(this).parent().children('.comments');
+        // commentvisible.toggleClass('commentshide');
+        // });
+        
+        </script>
         
         
       
