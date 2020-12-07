@@ -35,7 +35,7 @@ router.get('/signout',userController.endSession_signout);
 
 router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}));
 router.get('/user/auth/google/callback', passport.authenticate('google',{failureRedirect:'/signin/page'}),signin_controller.signin_createsession_control);
-
-
+router.post('/addfriend/',userController.addFriend);
+router.post('/unfriend',userController.unfriend);
 
 module.exports = router;

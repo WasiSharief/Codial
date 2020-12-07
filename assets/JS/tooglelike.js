@@ -53,6 +53,27 @@ $(this.toggler).click(function(e){
 
 
 }
+//if a user has liked a post when he logs in again the post or comment should be liked this is the code for that
+// <%var color="black"%>
+//             <%for(likes of post.likes){%>
+//                 <%if(likes.user == user.id){%>
+
+//                     <% color="blue"%>
+                         
+//                 <%}}%>
+
+
+//same for comments likes as above
+// <%var color="black"%>
+//             <%for(likes of comment.likes){%>
+//                 <%if(likes.user == user.id){%>
+
+//                     <% color="blue"%>
+                         
+//                 <%}}%>  
+
+// need to write this inside the classs of liker button <%=color%>
+
 
 class ToggleComment{
 

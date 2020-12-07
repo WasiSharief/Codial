@@ -1,7 +1,8 @@
 
         <link rel="stylesheet" type="text/css" href="/CSS/home.css">
+        <%if(profile_user.id == user.id){%>
         <img src="<%= user.avatar %>" id="profile-image" alt="<%= user.name %>" width="100">
-       
+         <%}%>
 
         <%if(profile_user.id == user.id){%>
        <form action="/user/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
@@ -12,11 +13,29 @@
       </form>
       <p id="preview" >Image Preview<br>
          FileSize :<%= user.fileinfo %>
-
       </p>
          <%} else{%>        
             <h1><%= h1%> <br>  
                UserName: <%= profile_user.name%> <br>   
             </h1>
          <%}%>
+            <% let present = true%>
+
+         <% for(friends of Friendlist){%>
+
+            <%if(profile_user.id == friends.touser){%>
+            <% present = false%>
+            <%}%>
+            <%}%>
+         <%if(present){%>
+         <%if(locals.user.id != profile_user.id){%>
+            <input type="button" href='/user/addfriend/?uid=<%= profile_user._id%>&fid=<%=user.id%>' value="Add Friend" id="addfriendbtn"/>
+            <%}%>
+            <%}else{%>
+
+               <%if(locals.user.id != profile_user.id){%>
+               <input type="button" href='/user/unfriend/?uid=<%= profile_user._id%>&fid=<%=user.id%>' value="Unfriend" id="unfriendbtn"/>
+               <%}%>
+
+               <%}%>
          <script src="/JS/profile_ajax.js"></script>

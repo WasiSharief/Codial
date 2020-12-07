@@ -32,3 +32,42 @@ $('#profimg').on('click',function(){
 $('#profile-image').on('mouseout',function(err){
     $('#profile-image').css('width','100px');
 });
+
+//adding friend through ajax
+$('#addfriendbtn').click(function(e){
+    e.preventDefault();
+
+    $(this).css('backgroundColor','green');
+    $(this).val('You are Friends now');
+
+    $.ajax({
+        type:'POST',
+        url:$(this).attr('href')
+
+    })
+    .done(function(data){
+
+    })
+    .fail(function(){
+        console.log("Error in adding friend");
+    })
+
+});
+
+// unfriending through ajax
+
+$('#unfriendbtn').click(function(e){
+    e.preventDefault();
+    
+    $(this).val('Add Friend');
+    $.ajax({
+        type:'POST',
+        url:$(this).attr('href')
+    })
+    .done(function(data){
+
+    })
+    .fail(function(){
+        console.log("Error in removing friend");
+    })
+});

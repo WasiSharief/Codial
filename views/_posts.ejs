@@ -15,18 +15,12 @@
         <div class="likes-comments-section">
            
             
-            <%var color="black"%>
-            <%for(likes of post.likes){%>
-                <%if(likes.user == user.id){%>
-
-                    <% color="blue"%>
-                         
-                <%}}%>
+            
                    
                 
                 <%if(locals.user){%>
                 <div class="likes">
-                    <a class="likeanchor" href="/likes/toggle/?id=<%=post.id%>&type=Post" ><i class="fas fa-thumbs-up liker <%=color%>"></i><p class="likecount"><%=post.likes.length%></p> Likes</a>
+                    <a class="likeanchor" href="/likes/toggle/?id=<%=post.id%>&type=Post" ><i class="fas fa-thumbs-up liker"></i><p class="likecount"><%=post.likes.length%></p> Likes</a>
                      </div>
                
 
@@ -54,18 +48,12 @@
                 <% for (comment of post.comments){%>
 
                     <%- include('_comments') -%>
-                    <%var color="black"%>
-            <%for(likes of comment.likes){%>
-                <%if(likes.user == user.id){%>
-
-                    <% color="blue"%>
-                         
-                <%}}%>  
-
+                    
+                    <%if(locals.user){%>
                     <div class="likes">
-                        <a class="likeanchor" href="/likes/toggle/?id=<%=comment._id%>&type=comments"  ><i class="fas fa-thumbs-up liker <%=color%>" ></i><p class="likecount"><%=comment.likes.length%></p> Likes</a>
+                        <a class="likeanchor" href="/likes/toggle/?id=<%=comment._id%>&type=comments"  ><i class="fas fa-thumbs-up liker " ></i><p class="likecount"><%=comment.likes.length%></p> Likes</a>
                          </div>
-                
+                         <%}%>
                 <%} %>
             </ul>
         </div>

@@ -59,8 +59,11 @@ body {
     transform: scaleX(1.2); }
   100% {
     transform: rotateZ(-10deg); } }
-    body #home-container #user-friends {
+    body #home-container aside {
       width: 30%; }
+      body #home-container aside #Friends {
+        width: 100%;
+        height: 50%; }
     body #home-container h1 {
       font-size: 45px;
       color: #0f3970;

@@ -22,15 +22,41 @@
                 </ul>
             </div>
         </section>
+        <aside>
+
         
-       <section id="user-friends">
-           <h2>Friends</h2>
+        <section id="Friends">
+            <h2>Friends</h2>
+            <%if(locals.user){%>
+
+            <% for(friends of friendlist){%>
+                
+            
+                <% for(u of users){%>
+                    <%if(friends.fromuser==user.id){%>
+
+                    <%if(u.id==friends.touser){%>
+                        <a href="user/profile/<%= u.id%>"><%= u.name%></a><br><br>
+                    <%}%>
+                    
+                    <%}%>
+                    
+                    <%}%>
+            
+                    <%}%>
+
+                <%}%>
+        </section> 
+
+        <section id="users">
+           <h2>Users</h2>
 
            <% for(u of users){%>
             <a href="user/profile/<%= u.id%>"><%= u.name%></a><br><br>
             <%}%>
-       </section>
- 
+        </section>
+        <%- include('_chat_engine')-%>
+    </aside>
         
         <br>
         <script src="/JS/comment_ajax.js"></script>
