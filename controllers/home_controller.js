@@ -14,10 +14,6 @@ module.exports.home= async function(req,res){
 
         let friendlist = await friends.find({});
 
-        console.log("Friendsfull",friendlist);
-
-        
-
          let posts = await post.find({})
         .populate('user')
         .populate('likes')
@@ -29,7 +25,6 @@ module.exports.home= async function(req,res){
             }
         });
 
-        console.log("Post likes",posts.likes);
 
         let users = await user.find({});
         

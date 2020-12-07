@@ -23,6 +23,17 @@ const sassmiddelware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const flashmidlwr = require('./config/flashmidlwr');
 
+//setting up chat server to use socket.io 
+const chatServer = require('http').Server(app);
+
+const chatSockets = require('./config/chat_socket.js').ChatSockets(chatServer);
+
+
+chatServer.listen(5000,'localhost');
+console.log('chat server is listining on port 5000');
+
+
+
 app.use(sassmiddelware({
     src:'./assets/SCSS',
     dest:'./assets/CSS',
