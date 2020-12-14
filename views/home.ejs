@@ -1,6 +1,6 @@
 
-        <link rel="stylesheet" type="text/css" href="/CSS/home.css">
-    <link rel="stylesheet" href="/CSS/chat_box.css">
+        <link rel="stylesheet" type="text/css" href="<%= assetPath('CSS/home.css')%>">
+    <link rel="stylesheet" href="<%= assetPath('CSS/chat_box.css') %>">
         
 <div id="home-container">
     <section id="feed-posts">
@@ -64,10 +64,10 @@
         <script src="https://kit.fontawesome.com/0353bbb956.js" crossorigin="anonymous"></script>
 
 
-        <script src="/JS/post_ajax.js"></script>
-        <script src="/JS/comment_ajax.js"></script>
-        <script src="/JS/tooglelike.js"></script>
-        <script src="/JS/toggle_comment.js"></script>
+        <script src="<%= assetPath('JS/post_ajax.js') %>"></script>
+        <script src="<%= assetPath('JS/comment_ajax.js') %>"></script>
+        <script src="<%= assetPath('JS/tooglelike.js') %>"></script>
+        <script src="<%= assetPath('JS/toggle_comment.js') %>"></script>
 
         <script>
 
@@ -92,11 +92,11 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
 
-        <script src="/JS/chat_engine.js"></script>
+        <script src="<%= assetPath('JS/chat_engine.js') %>"></script>
         
         <%if(locals.user){%>
         <script>
-            new ChatEngine('chatbox','<%= locals.user._id %>')
+            new ChatEngine('chatbox','<%= locals.user.email %>')
         </script>
         
         <%}%>

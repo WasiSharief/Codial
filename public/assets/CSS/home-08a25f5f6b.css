@@ -1,0 +1,14 @@
+.post-comments-list {
+  width: fit-content;
+  height: fit-content;
+  background-color: #c5aaaa;
+  border: 1px solid black;
+  margin-left: 3%;
+  text-align: left; }
+  .post-comments-list p {
+    display: inline-block; }
+
+#user-friends {
+  width: 30% !important;
+  padding: 10px;
+  border: 1px solid black; }

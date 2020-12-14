@@ -1,6 +1,7 @@
 const User = require('../../../models/userschema');
 
 const jwt = require('jsonwebtoken');
+const env = require('../../../config/environment');
 
 module.exports.signin_createsession_control = async function(req,res)
 {
@@ -16,7 +17,7 @@ module.exports.signin_createsession_control = async function(req,res)
         return res.json(200,{ 
             message:"Sign in successful and your token is",
             data:{
-            token: jwt.sign(user.toJSON(),'codial',{expiresIn:'100000'})
+            token: jwt.sign(user.toJSON(),env.jwt_strat_secret_key,{expiresIn:'100000'})
         }
         });
     }

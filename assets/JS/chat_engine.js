@@ -19,11 +19,73 @@ class ChatEngine{
         }
 
     }
-   // , { transport : ['websocket'] },{secure: true}
+  
     connectionHandler(){
-        console.log("here");
+     
+        let self = this;
+
         this.socket.on('connect',function(){
-            console.log("connection established using sockets...!");
+            console.log("chat connection established using sockets...!");
+
+            self.socket.emit('join_room',{
+                user_email: self.userEmail,
+                chatroom:'codial'
+            });
+
+           self.socket.on("user_joined", function(data){
+                
+                console.log('a user joined!', data);
+            });
+            
+
         });
+    
+        $('#chatsendbtn').click(function(){
+
+            let msg = $('#chatinput').val();
+
+            if(msg != '')
+            {
+                
+                self.socket.emit('send_message',{
+                    message:msg,
+                    user_email:self.userEmail,
+                    chatroom:'codail'
+                });
+            }
+        });
+        
+        self.socket.on('receive_message',function(data){
+
+            console.log('message received',data.message);
+
+            let newMessage = $('<li>');
+
+            let messagetype = 'sender'
+
+            if(data.user_email == self.userEmail){
+                messagetype = 'receiver';
+            }
+
+            newMessage.append($('<span>',{
+                'html':data.message
+            }));
+
+            newMessage.append($('<small>',{
+                'html':data.user_email
+            }));
+
+            newMessage.addClass(messagetype);
+
+            $('#chatmessage-list').append(newMessage);
+
+            var element = document.getElementById("conversationbox");
+            element.scrollTop = element.scrollHeight;
+        });
+
     }
 }
+
+
+
+

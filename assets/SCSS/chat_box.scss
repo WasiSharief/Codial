@@ -3,7 +3,7 @@
     height: 300px;
     background-color: yellowgreen;
     position: fixed;
-    left: 83%;
+    left: 73%;
     top: 55%;
     border: 1px black solid;
     border-radius: 6px;
@@ -15,10 +15,11 @@
         height: 90%;
         background-color: whitesmoke;
         border-radius: 6px;
+        overflow-y: scroll;
         ul{
-            width: 100%;
-           
+            width: 90%;
             margin-left: -16%;
+            
         }
         li{
             list-style: none;

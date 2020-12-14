@@ -1,0 +1,25 @@
+header {
+  height: 50px;
+  background-color: #064f52;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  padding-bottom: 10px; }
+  header a {
+    text-decoration: none;
+    color: white; }
+  header ul {
+    display: flex;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
+    header ul li {
+      list-style: none;
+      margin-left: 40px;
+      margin-right: 10px; }
+      header ul li a {
+        color: white;
+        text-decoration: none; }
+        header ul li a:hover {
+          color: yellowgreen; }

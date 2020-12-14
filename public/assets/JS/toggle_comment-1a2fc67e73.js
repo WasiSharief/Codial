@@ -1,0 +1,1 @@
+class ToggleComment{constructor(t){this.toggler=t,this.togglecomment()}togglecomment(){$(this.toggler).click((function(t){t.preventDefault(),$(this).parent().children(".comments").toggleClass("commentshide")}))}}

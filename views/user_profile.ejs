@@ -1,5 +1,5 @@
 
-        <link rel="stylesheet" type="text/css" href="/CSS/home.css">
+        <link rel="stylesheet" type="text/css" href="<%= assetPath('CSS/home.css') %>">
         <%if(profile_user.id == user.id){%>
         <img src="<%= user.avatar %>" id="profile-image" alt="<%= user.name %>" width="100">
          <%}%>
