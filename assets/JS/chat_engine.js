@@ -12,7 +12,7 @@ class ChatEngine{
             "transports" : ["websocket"]
         };
 
-        this.socket = io.connect('http://localhost:5000',connectionOptions);
+        this.socket = io.connect('http://34.203.193.223:5000',connectionOptions);
 
         if(this.userEmail){
             this.connectionHandler();

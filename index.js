@@ -48,7 +48,7 @@ app.use(sassmiddelware({
 }
 
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:false}));
 
 app.use(cookieParser());
 
